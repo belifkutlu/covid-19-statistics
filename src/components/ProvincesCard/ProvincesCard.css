@@ -1,0 +1,28 @@
+.provinces-card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 20%;
+  font-weight: 400;
+  border: 1px solid rgb(155, 150, 0);
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.provinces-card a {
+  text-decoration: none;
+  color: #006f41;
+}
+
+.provinces-card:hover {
+  box-shadow: 0px 6px 10px rgba(72, 72, 72, 0.4);
+  transform: scale(1.01);
+  background-color: rgb(161, 220, 220);
+  border: none;
+
+  transform: scale(1.07);
+}

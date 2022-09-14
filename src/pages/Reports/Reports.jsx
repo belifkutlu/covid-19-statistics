@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+import StatisticsTable from "../../components/StatisticsTable";
 
 import "./Reports.css";
 
@@ -26,28 +28,23 @@ function Reports() {
   }, []);
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Death</th>
-          <th>confirmed</th>
-          <th>date</th>
-        </tr>
-      </thead>
+    <div className="container">
+      <table>
+        <thead className="tbl-header ">
+          <tr className="tbl-content  ">
+            <th>Death</th>
+            <th>confirmed</th>
+            <th>date</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        {reports.map((item) => {
-          return (
-            <tr>
-              <td>{item.deaths}</td>
-              <td>{item.confirmed}</td>
-
-              <td>{item.date}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+        <tbody className="made-with-love">
+          {reports.map((item) => (
+            <StatisticsTable item={item} />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

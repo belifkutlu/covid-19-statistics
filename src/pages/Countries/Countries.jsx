@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+import CountriesCard from "../../components/CountriesCard";
 
 import "./Countries.css";
 
@@ -26,11 +27,11 @@ export default function Countries() {
   return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Countries</h2>
-      {countries.map((country) => (
-        <div>
-          <Link to={`/cities/${country.iso}`}>{country.name}</Link>
-        </div>
-      ))}
+      <div className="content">
+        {countries.map((country) => (
+          <CountriesCard country={country} />
+        ))}
+      </div>
     </main>
   );
 }

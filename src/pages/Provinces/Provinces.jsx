@@ -1,5 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+import ProvincesCard from "../../components/ProvincesCard";
 
 import "./Provinces.css";
 
@@ -30,13 +32,11 @@ export default function Provinces() {
   return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Provinces</h2>
-      {cities.map((city) => (
-        <div>
-          <Link to={`/reports/${city.province || city.name}`}>
-            {city.province || city.name}
-          </Link>
-        </div>
-      ))}
+      <div className="section">
+        {cities.map((city) => (
+          <ProvincesCard city={city} />
+        ))}
+      </div>
     </main>
   );
 }
